@@ -7,10 +7,12 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 gem "sprockets-rails"
 gem "puma", "~> 5.0"
 gem "importmap-rails"
-gem "turbo-rails"
+gem "turbo-rails", '~> 1.0.0'
 gem "stimulus-rails"
 gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
+gem "sassc-rails"
+gem 'bootstrap', '~> 5.1.3'
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
@@ -26,6 +28,7 @@ end
 
 group :test do
   gem "capybara"
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.5'
   gem 'minitest', '~> 5.15'
   gem 'minitest-reporters', '~> 1.5'
   gem "selenium-webdriver"

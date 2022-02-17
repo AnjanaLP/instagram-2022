@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
 
-  root "application#index"
+  root "users#show"
+
+  get 'users/show'
 end
