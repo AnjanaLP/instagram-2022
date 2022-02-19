@@ -1,0 +1,5 @@
+<% if @user.errors.any? %>
+  <div class="error-messages">
+      <%= @user.errors.full_messages.to_sentence %>
+  </div>
+<% end %>

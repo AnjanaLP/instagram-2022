@@ -1,1 +1,38 @@
 <% provide(:subtitle, "Sign up") %>
+
+<div class="form-card">
+  <div class="card">
+    <div class="card-body text-center">
+      <h3 class="mb-3 mt-2 fst-italic">Instagram</h3>
+      <p class="mb-2 fw-bold text-muted">Sign up to see photos and videos from your friends</p>
+
+      <%= form_with(model: @user, local: true) do |f| %>
+
+        <%= f.email_field :email, placeholder: "Email address", class: "form-control" %>
+
+        <%= f.text_field :name, placeholder: "Full name", class: "form-control" %>
+
+        <%= f.text_field :username, placeholder: "Username", class: "form-control" %>
+
+        <%= f.password_field :password, placeholder: "Password",  class: "form-control" %>
+
+        <%= f.submit "Create my account", class: "w-100 btn btn-primary" %>
+
+        <%= render 'shared/error_messages' %>
+      <% end %>
+
+      <p class="fine-print text-muted">By signing up, you agree to our Terms. Learn how we collect,
+        use and share your data in our Data Policy, and how we use cookies and similar technology
+        in our Cookie Policy.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="form-card">
+  <div class="card">
+    <div class="card-body text-center">
+        <p class="mt-2 mb-2">Have an account? <%= link_to "Log in", "#" %></p>
+    </div>
+  </div>
+</div>
