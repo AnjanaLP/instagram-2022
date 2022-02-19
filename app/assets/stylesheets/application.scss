@@ -13,18 +13,34 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+@import "bootstrap";
+
+.container {
+  width: 85%;
+}
 
 .form-card {
+  width: 21rem;
+  margin: 0 auto;
+  float: none;
+  margin-top: 70px
+}
+
+.form-card-sub {
   width: 21rem;
   margin: 0 auto;
   float: none;
   margin-top: 15px
 }
 
+
 .form-card input {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.form-card-sub a {
+  text-decoration: none;
 }
 
 .fine-print {

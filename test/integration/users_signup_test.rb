@@ -25,6 +25,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'users/show'
     assert_not flash.empty?
-    assert_match "test-user", response.body
+    assert_select 'title', full_title('Test User (@test-user)')
+    assert_match 'test-user', response.body
   end
 end
