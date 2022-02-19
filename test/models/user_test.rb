@@ -4,7 +4,8 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @user = User.new(name: "Test User",
                      email: "test@example.com",
-                     username: "test-user")
+                     username: "test-user",
+                     password: "password123")
   end
 
   test "correct credentials should be valid" do
@@ -80,5 +81,15 @@ class UserTest < ActiveSupport::TestCase
                               username: @user.username)
     @user.save
     assert_not duplicate_user.valid?
+  end
+
+  test "password should not be blank spaces" do
+    @user.password = "      "
+    assert_not @user.valid?
+  end
+
+  test "password should not be less than 6 characters" do
+    @user.password = "a" * 5
+    assert_not @user.valid?
   end
 end
