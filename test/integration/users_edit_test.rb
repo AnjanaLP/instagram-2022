@@ -39,4 +39,14 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_equal email, @user.email
     assert_equal username, @user.username
   end
+
+  test "successful deletion of account" do
+    log_in_as(@user)
+    assert_difference 'User.count', -1 do
+      delete user_path(@user)
+    end
+    assert_redirected_to root_url
+    assert_not flash.empty?
+    assert_not is_logged_in?
+  end
 end

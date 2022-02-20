@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 15)
@@ -27,17 +27,22 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = "Profile successfully updated"
       redirect_to @user
     else
       render 'edit', status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @user.delete
+    log_out
+    flash[:success] = "Account successfully deleted"
+    redirect_to root_url, status: :see_other
   end
 
   private

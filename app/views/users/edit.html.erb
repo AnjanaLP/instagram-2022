@@ -23,11 +23,15 @@
 
         <%= f.label :password %>
         <%= f.password_field :password, class: "form-control" %>
-        
+
         <%= f.submit "Update my profile", class: "w-100 btn btn-primary" %>
 
         <%= render 'shared/error_messages' %>
       <% end %>
+
+      <%= link_to "Delete my account", @user,
+                   data: { "turbo-method": :delete, "turbo_confirm": 'Are you sure?' },
+                   class: "w-100 btn btn-danger" %>
     </div>
   </div>
 </div>
