@@ -1,0 +1,15 @@
+<div class="users-card">
+  <div class="card">
+    <div class="apple_pagination mb-4 bg-light">
+      <%= will_paginate @users, :container => false %>
+    </div>
+    <div class="card-body">
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+    </div>
+    <div class="apple_pagination bg-light">
+      <%= will_paginate @users, :container => false %>
+    </div>
+  </div>
+</div>

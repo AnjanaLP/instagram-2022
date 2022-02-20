@@ -12,6 +12,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Account</a>
             <ul class="dropdown-menu" aria-labelledby="dropdown01">
               <li><%= link_to "Profile", current_user, class: "dropdown-item" %></li>
+              <li><%= link_to "Users", users_path, class: "dropdown-item" %></li>
               <li><%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %></li>
               <li><hr class="dropdown-divider"></li>
               <li><%= link_to "Log out", logout_path, data: { "turbo-method": :delete }, class: "dropdown-item" %></li>
