@@ -8,6 +8,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
 
   test "unsuccessful login with correct email but incorrect password" do
     get login_path
+    assert_template 'sessions/new'
     post login_path, params: { session: { email: @user.email, password: "wrong password" } }
     assert_template 'sessions/new'
     assert_not is_logged_in?
