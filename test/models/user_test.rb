@@ -92,4 +92,12 @@ class UserTest < ActiveSupport::TestCase
     @user.password = "a" * 5
     assert_not @user.valid?
   end
+
+  test "destroying a user should destroy their posts" do
+    @user.save
+    @user.posts.create!(caption: "Test post")
+    assert_difference 'Post.count', -1 do
+      @user.destroy
+    end
+  end
 end

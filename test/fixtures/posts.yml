@@ -1,0 +1,19 @@
+ruby:
+  caption: "I love ruby"
+  created_at: <%= 2.days.ago %>
+  user: alice
+
+rails:
+  caption: "Rails is amazing"
+  created_at: <%= 20.minutes.ago %>
+  user: alice
+
+latest:
+  caption: "My latest post"
+  created_at: <%= Time.zone.now %>
+  user: alice
+
+instgram:
+  caption: "Posting on instagram is great"
+  created_at: <%= 2.minutes.ago%>
+  user: alice

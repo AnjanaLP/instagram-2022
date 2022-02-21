@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = URI::MailTo::EMAIL_REGEXP
 
+  has_many :posts, dependent: :destroy
+
   before_save { email.downcase! }
 
   validates :name, presence: true, length: { maximum: 50 }
