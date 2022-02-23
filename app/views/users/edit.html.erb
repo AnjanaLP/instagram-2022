@@ -26,7 +26,7 @@
 
         <%= f.submit "Update my profile", class: "w-100 btn btn-primary" %>
 
-        <%= render 'shared/error_messages' %>
+        <%= render 'shared/error_messages', object: f.object %>
       <% end %>
 
       <%= link_to "Delete my account", @user,

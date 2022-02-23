@@ -3,7 +3,7 @@
 <div class="form-card">
   <div class="card">
     <div class="card-body text-center">
-      <h3 class="mb-3 mt-2 fst-italic">Instagram</h3>
+      <h3 class="mb-3 mt-2 logo">Instagram</h3>
       <p class="mb-2 fw-bold text-muted">Sign up to see photos and videos from your friends</p>
 
       <%= form_with(model: @user, local: true) do |f| %>
@@ -18,7 +18,7 @@
 
         <%= f.submit "Create my account", class: "w-100 btn btn-primary" %>
 
-        <%= render 'shared/error_messages' %>
+        <%= render 'shared/error_messages', object: f.object %>
       <% end %>
 
       <p class="fine-print text-muted">By signing up, you agree to our Terms. Learn how we collect,

@@ -1,0 +1,9 @@
+<div class="col">
+  <div class="card shadow-sm">
+    <% if post.image.attached? %>
+      <%= link_to image_tag(post.image, size: "293x293", class: "card-img-top"), post %>
+    <% else %>
+      <%= link_to image_tag("bowling-g576a08bee_1280.png", size: "293x293", class: "card-img-top"), post %>
+    <% end %>
+  </div>
+</div>

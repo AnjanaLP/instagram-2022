@@ -1,0 +1,11 @@
+<div>
+  <% if @post.image.attached? %>
+    <div class="show-image">
+        <%= image_tag(@post.image, size: "725x725")%>
+    </div>
+
+  <% else %>
+    <%= image_tag("bowling-g576a08bee_1280.png", size: "1080x1080")%>
+  <% end %>
+  <%= @post.caption %>
+</div>

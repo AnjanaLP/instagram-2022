@@ -16,6 +16,7 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 gem 'faker', '~> 2.19'
 gem 'will_paginate', '~> 3.3'
+gem 'active_storage_validations', '~> 0.9.6'
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 

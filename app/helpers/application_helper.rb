@@ -8,4 +8,8 @@ module ApplicationHelper
   def move_flash_messages?
     params[:controller] == "sessions" && params[:action] == "create"
   end
+
+  def no_nav?
+    params[:controller] == "posts" && params[:action] == "show"
+  end
 end

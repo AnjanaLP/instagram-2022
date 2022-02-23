@@ -15,16 +15,21 @@
  */
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 
 .container {
-  width: 85%;
+  width: 67%;
+}
+
+.page-container {
+  margin-top: 75px;
 }
 
 .form-card {
   width: 21rem;
   margin: 0 auto;
   float: none;
-  margin-top: 70px;
 }
 
 .form-card-sub {
@@ -61,7 +66,6 @@
   width: 32rem;
   margin: 0 auto;
   float: none;
-  margin-top: 70px;
 }
 
 .users {
@@ -111,3 +115,11 @@
   color: black; }
 .apple_pagination a:hover, .apple_pagination a:focus {
   text-decoration: underline; }
+
+.logo {
+  font-family: 'Pacifico', cursive;
+}
+
+.show-image {
+  margin-left: 80px;
+}

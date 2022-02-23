@@ -12,8 +12,10 @@
   </head>
 
   <body>
-    <%= render 'shared/header' %>
+    <%= render 'shared/nav' unless no_nav? %>
     <%= render 'shared/flash_messages' %>
-    <%= yield %>
+    <div class="page-container">
+      <%= yield %>
+    </div>
   </body>
 </html>
