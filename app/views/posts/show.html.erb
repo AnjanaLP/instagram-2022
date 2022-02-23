@@ -1,11 +1,27 @@
-<div>
-  <% if @post.image.attached? %>
-    <div class="show-image">
-        <%= image_tag(@post.image, size: "725x725")%>
-    </div>
+<div class="back-button">
+  <%= link_to 'Back', @post.user %>
+</div>
 
-  <% else %>
-    <%= image_tag("bowling-g576a08bee_1280.png", size: "1080x1080")%>
-  <% end %>
-  <%= @post.caption %>
+<div class="show-card">
+  <div class="container">
+    <div class= "card">
+      <div class="card-body">
+        <% if @post.image.attached? %>
+          <div >
+              <%= image_tag(@post.show_large_image)%>
+              <span class="align-top caption">
+                <span class='text-dark fw-bold'><%= fa_icon("user-circle") %>
+                                                <%= current_user.username %>
+                </span>
+                <span class="text-muted"><%= @post.caption %>
+                <div class="align-top caption">
+                </div>
+              </span>
+          </div>
+        <% else %>
+          <%= image_tag("")%>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
