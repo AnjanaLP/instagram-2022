@@ -6,21 +6,33 @@
   <div class="container">
     <div class= "card">
       <div class="card-body">
-        <% if @post.image.attached? %>
-          <div >
+        <div class="row">
+          <div class="col col-md-auto">
+            <% if @post.image.attached? %>
               <%= image_tag(@post.show_large_image)%>
-              <span class="align-top caption">
-                <span class='text-dark fw-bold'><%= fa_icon("user-circle") %>
-                                                <%= current_user.username %>
-                </span>
-                <span class="text-muted"><%= @post.caption %>
-                <div class="align-top caption">
-                </div>
-              </span>
+            <% else %>
+               <%= image_tag("")%>
+            <% end %>
           </div>
-        <% else %>
-          <%= image_tag("")%>
-        <% end %>
+          <div class="col">
+            <% if current_user?(@post.user) %>
+              <span class="post-links"><%= link_to 'edit','#'%> | <%= link_to 'delete','#'%></span>
+            <% else %>
+              <span class='user-link'><%= fa_icon("user-circle") %>
+                                      <%= link_to @post.user.username, @post.user %>
+              </span>
+              <span><%= link_to "Follow", '#', class: "follow-show-btn" %></span>
+            <% end %>
+            <hr>
+            <p>
+              <span class='user-link'><%= fa_icon("user-circle") %>
+                                      <%= link_to @post.user.username, @post.user %>
+              </span>
+              <span class="text-muted"><%= @post.caption %></span>
+            </p>
+            <p class="mt-3"> A new comment <p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
