@@ -3,6 +3,7 @@ require "test_helper"
 class PostsControllerTest < ActionDispatch::IntegrationTest
   def setup
     @post = posts(:ruby)
+    @other_user = users(:bob)
   end
 
   test "should get new" do
@@ -23,5 +24,31 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to login_url
     assert_not flash.empty?
+  end
+
+  test "should redirect edit when not logged in" do
+    get edit_post_path(@post)
+    assert_not flash.empty?
+    assert_redirected_to login_url
+  end
+
+  test "should redirect edit when logged in as the wrong user" do
+    log_in_as(@other_user)
+    get edit_post_path(@post)
+    assert flash.empty?
+    assert_redirected_to root_url
+  end
+
+  test "should redirect update when not logged in" do
+    patch post_path(@post), params: { post: { caption: "Updated caption" } }
+    assert_not flash.empty?
+    assert_redirected_to login_url
+  end
+
+  test "should redirect update when logged in as the wrong user" do
+    log_in_as(@other_user)
+    patch post_path(@post), params: { post: { caption: "Updated caption" } }
+    assert flash.empty?
+    assert_redirected_to root_url
   end
 end

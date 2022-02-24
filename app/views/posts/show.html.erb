@@ -16,7 +16,7 @@
           </div>
           <div class="col">
             <% if current_user?(@post.user) %>
-              <span class="post-links"><%= link_to 'edit','#'%> | <%= link_to 'delete','#'%></span>
+              <span class="post-links"><%= link_to 'edit',edit_post_path(@post)%> | <%= link_to 'delete','#'%></span>
             <% else %>
               <span class='user-link'><%= fa_icon("user-circle") %>
                                       <%= link_to @post.user.username, @post.user %>
