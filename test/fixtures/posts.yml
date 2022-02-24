@@ -17,3 +17,8 @@ instgram:
   caption: "Posting on instagram is great"
   created_at: <%= 2.minutes.ago%>
   user: alice
+
+test:
+  caption: "Test post"
+  created_at: <%= 1.minutes.ago%>
+  user: user_1
