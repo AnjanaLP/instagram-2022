@@ -5,7 +5,7 @@ class PostsCreateTest < ActionDispatch::IntegrationTest
     @user = users(:bob)
   end
 
-  test "create post and see it" do
+  test "create own post and see it" do
     log_in_as(@user)
     get user_path(@user)
     assert_match "0 posts", response.body

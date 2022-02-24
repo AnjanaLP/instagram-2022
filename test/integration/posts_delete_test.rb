@@ -6,7 +6,7 @@ class PostsDeleteTest < ActionDispatch::IntegrationTest
     @post = posts(:ruby)
   end
 
-  test "successful deletion of a user's own post " do
+  test "delete own post and no longer see it" do
     log_in_as(@user)
     get post_path(posts(:test))
     assert_select 'a', { text: 'delete', count: 0 }

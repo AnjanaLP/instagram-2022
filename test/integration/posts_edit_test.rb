@@ -6,10 +6,13 @@ class PostsEditTest < ActionDispatch::IntegrationTest
     @post = posts(:ruby)
   end
 
-  test "can edit a post and see it" do
+  test "edit own post and see it updated" do
     new_caption  = "Updated Caption"
     log_in_as(@user)
+    get post_path(posts(:test))
+    assert_select "a[href=?]", edit_post_path(@post), count: 0
     get post_path(@post)
+    assert_select "a[href=?]", edit_post_path(@post)
     assert_no_match new_caption, response.body
     assert_no_match 'bowling.png', response.body
     get edit_post_path(@post)
