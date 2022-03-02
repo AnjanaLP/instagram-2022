@@ -1,0 +1,5 @@
+<% if @users.count > 15 %>
+  <div class="apple_pagination bg-light">
+    <%= will_paginate @users, :container => false %>
+  </div>
+<% end %>

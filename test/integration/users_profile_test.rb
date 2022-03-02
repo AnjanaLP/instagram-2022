@@ -12,6 +12,8 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'p', text: @user.name
     assert_select 'h1>svg.bi-person-circle'
     assert_match @user.posts.count.to_s, response.body
+    assert_match @user.following.count.to_s, response.body
+    assert_match @user.followers.count.to_s, response.body
     @user.posts.each do |post|
       assert_select 'a[href=?]', post_path(post)
     end

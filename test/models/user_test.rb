@@ -100,4 +100,21 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+  test "a user can follow and unfollow another user" do
+    bob = users(:bob)
+    alice  = users(:alice)
+    assert_not bob.following?(alice)
+    bob.follow(alice)
+    assert bob.following?(alice)
+    assert alice.followers.include?(bob)
+    bob.unfollow(alice)
+    assert_not bob.following?(alice)
+  end
+
+  test "a user cannot follow themselves" do
+    bob = users(:bob)
+    bob.follow(bob)
+    assert_not bob.following?(bob)
+  end
 end
