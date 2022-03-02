@@ -8,7 +8,7 @@
         <%= current_user.username %>
       <p>
       <%= form_with(model: @post, local: true) do |f| %>
-        <%= f.file_field :image, accept: "image/jpeg,image/png" %>
+        <%= f.file_field :image, accept: "image/jpeg,image/png", required: true %>
         <%= f.text_area :caption, placeholder: "Write a caption...", class: "form-control", rows:9 %>
         <%= f.submit "Post", class: "w-100 btn btn-primary" %>
         <%= render 'shared/error_messages', object: f.object %>
