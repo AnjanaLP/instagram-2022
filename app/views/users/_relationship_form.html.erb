@@ -1,10 +1,6 @@
-<% if current_user?(@user) %>
-  <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-outline-dark" %>
+<span id="follow_form">
+<% if current_user.following?(object) %>
+  <%= render 'unfollow', object: object, style: style  %>
 <% else %>
-  <span id="follow_form">
-  <% if current_user.following?(@user) %>
-    <%= render 'unfollow' %>
-  <% else %>
-    <%= render 'follow' %>
-  <% end %>
+  <%= render 'follow', object: object, style: style  %>
 <% end %>
