@@ -24,7 +24,7 @@
               <span class='user-link'><%= fa_icon("user-circle") %>
                                       <%= link_to @post.user.username, @post.user %>
               </span>
-              <span><%= link_to "Follow", '#', class: "follow-show-btn" %></span>
+              <span><%= render 'users/relationship_form', { object: @post.user, style: "btn-sm" } if logged_in? %></span>
             <% end %>
             <hr>
             <p>

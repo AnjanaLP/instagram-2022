@@ -1,0 +1,19 @@
+require "test_helper"
+
+class RelationshipsControllerTest < ActionDispatch::IntegrationTest
+  test "should redirect create when not logged in" do
+    assert_no_difference 'Relationship.count' do
+      post relationships_path
+    end
+    assert_redirected_to login_url
+    assert_not flash.empty?
+  end
+
+  test "should redirect delete when not logged in" do
+    assert_no_difference 'Relationship.count' do
+      delete relationship_path(relationships(:one))
+    end
+    assert_redirected_to login_url
+    assert_not flash.empty?
+  end
+end

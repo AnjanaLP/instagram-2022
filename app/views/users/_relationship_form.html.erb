@@ -1,6 +1,6 @@
 <span id="follow_form">
 <% if current_user.following?(object) %>
-  <%= render 'unfollow', object: object, style: style  %>
+  <%= render 'users/unfollow', object: object, style: style  %>
 <% else %>
-  <%= render 'follow', object: object, style: style  %>
+  <%= render 'users/follow', object: object, style: style  %>
 <% end %>
