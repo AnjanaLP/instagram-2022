@@ -180,3 +180,18 @@
     color: black;
   }
 }
+
+.comments {
+  list-style: none;
+}
+
+.picture {
+  img {
+    margin-bottom: -33px;
+  }
+}
+
+.delete-btn {
+  margin-right: 10px;
+  color: red;
+}
