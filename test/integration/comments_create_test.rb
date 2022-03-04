@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CommentsInterfaceTest < ActionDispatch::IntegrationTest
+class CommentsCreateTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:bob)
     @post = posts(:ruby)
