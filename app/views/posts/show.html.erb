@@ -46,20 +46,20 @@
                 <% end %>
               <% end %>
             <% end %>
-
           </div>
-          <div class="row align-items-end">
-            <div class="col-7">
+
+          <div class="row align-items-end fixed">
+            <div class="col-7"></div>
+            <div class="col-5">
+              <div class="comment-form">
+                <p><span class="heart-icon"><%= link_to fa_icon("heart"), '#'%></span><span class="likes-count">10 likes</span></p>
+                <%= form_with(model: @comment, url: post_comments_path(@post), local: true) do |f| %>
+                  <%= f.text_field :content, placeholder: "Write a comment...", required: true%>
+                  <%= f.submit "Post comment", class: "btn-sm btn-primary comment-btn" %>
+                <% end %>
+              </div>
             </div>
-          <div class="col-5">
-            <%= form_with(model: @comment, url: post_comments_path(@post), local: true) do |f| %>
-
-              <%= f.text_field :content, placeholder: "Write a comment...", class: "w-75", required: true%>
-              <%= f.submit "Post", class: "btn-sm btn-primary" %>
-            <% end %>
-
           </div>
-        </div>
         </div>
       </div>
     </div>
