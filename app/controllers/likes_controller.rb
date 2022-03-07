@@ -3,10 +3,12 @@ class LikesController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @like = @post.likes.build
-    @like.user_id = current_user.id
+    @like = @post.likes.build(user_id: current_user.id)
     if @like.save
       redirect_to @post
+    else
+      flash.now[:danger] = "You have already liked this post"
+      render 'posts/show', status: :unprocessable_entity
     end
   end
 end
