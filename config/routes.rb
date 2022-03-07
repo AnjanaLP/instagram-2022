@@ -18,5 +18,8 @@ Rails.application.routes.draw do
   end
   resources :posts do
     resources :likes, only: [:create]
+    member do
+      get :likes
+    end
   end
 end

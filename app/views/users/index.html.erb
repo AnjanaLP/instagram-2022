@@ -5,6 +5,7 @@
       <% if @title %>
       <h5 class="relationship-title text-center mb-3"><%= @title %>
         <%= fa_icon("user-circle") %> <%= link_to @user.username, @user %>
+        <hr class="divider">
       </h5>
       <% end %>
       <% if @users.any? %>

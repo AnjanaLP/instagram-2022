@@ -6,6 +6,6 @@
     <p class="fw-bold user">
       <%= link_to user.username, user %>
     </p>
-    <%= render 'relationship_form', { object: user, style: "follow-button" } %>
+    <%= render 'users/relationship_form', { object: user, style: "follow-button" } %>
   </p>
 </li>

@@ -1,0 +1,15 @@
+<div class="users-card">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="relationship-title text-center mb-3">Likes</h5>
+      <% if @likes.any? %>
+        <hr class="divider">
+        <ul class="users">
+          <% @likes.each do |like| %>
+            <%= render like.user, object: like.user, style: "follow-button"%>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+</div>

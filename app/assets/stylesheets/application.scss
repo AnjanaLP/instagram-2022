@@ -202,6 +202,10 @@
 
 .likes-count {
   margin-left: 10px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .comment-form {
@@ -210,7 +214,6 @@
 
 .heart-icon {
   a {
-    text-decoration: none;
     color: black;
   }
 }

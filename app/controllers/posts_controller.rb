@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy, :likes]
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def show
@@ -38,6 +38,11 @@ class PostsController < ApplicationController
     @post.destroy
     flash[:success] = "Your post has been deleted"
     redirect_to current_user, status: :see_other
+  end
+
+  def likes
+    @likes = Post.find(params[:id]).likes
+    render 'likes'
   end
 
   private
