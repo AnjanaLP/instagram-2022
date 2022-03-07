@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :destroy, :followers, :following, :edit,
+                                  :update, :destroy]
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy,
                                         :followers, :following]
   before_action :correct_user,   only: [:edit, :update, :destroy]
@@ -8,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @posts = @user.posts
   end
 
@@ -48,14 +49,12 @@ class UsersController < ApplicationController
   end
 
   def followers
-    @user  = User.find(params[:id])
     @title = "Followers"
     @users = @user.followers.paginate(page: params[:page], per_page: 15)
     render 'index'
   end
 
   def following
-    @user  = User.find(params[:id])
     @title = "Following"
     @users = @user.following.paginate(page: params[:page], per_page: 15)
     render 'index'
@@ -67,8 +66,11 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :username, :password)
   end
 
-  def correct_user
+  def set_user
     @user = User.find(params[:id])
+  end
+
+  def correct_user
     redirect_to(root_url) unless current_user?(@user)
   end
 end
