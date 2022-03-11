@@ -117,4 +117,21 @@ class UserTest < ActiveSupport::TestCase
     bob.follow(bob)
     assert_not bob.following?(bob)
   end
+
+  test "the feed should have the correct posts" do
+    bob = users(:bob)
+    alice = users(:alice)
+    no_relationship_user = users(:user_4)
+
+    bob.follow(alice)
+    alice.posts.each do |post|
+      assert bob.feed.include?(post)
+    end
+
+    no_relationship_user.posts.each do |post|
+      assert_not bob.feed.include?(post)
+    end
+
+    assert no_relationship_user.feed.empty?
+  end
 end

@@ -22,3 +22,8 @@ test:
   caption: "Test post"
   created_at: <%= 1.minutes.ago%>
   user: user_1
+
+no_relatiionships:
+  caption: "I have no relationships"
+  created_at: <%= 3.minutes.ago%>
+  user: user_4
