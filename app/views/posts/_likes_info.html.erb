@@ -1,0 +1,5 @@
+<p>
+  <span class="heart-icon"><%= link_to fa_icon("heart"), post_likes_path(object),
+        data: { "turbo-method": :post } %></span>
+  <span class="likes-count"><%= link_to(pluralize(object.likes.count, 'like'), likes_post_path(object) ) %></span>
+</p>

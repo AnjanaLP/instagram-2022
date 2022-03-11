@@ -1,0 +1,24 @@
+<div class="users-card">
+  <% if @feed_posts.any? %>
+    <% @feed_posts.each do |post| %>
+      <div class="col">
+        <div class="card mb-5 card-body gallery-thumbs">
+          <span class='mb-3 user-link'><%= fa_icon("user-circle") %>
+                                  <%= link_to post.user.username, post.user %>
+          </span>
+          <% if post.image.attached? %>
+            <%= link_to image_tag(post.image), post %>
+          <% else %>
+            <%= link_to image_tag(""), post %>
+          <% end %>
+
+          <p class="mt-2">
+            <%= render 'posts/likes_info', { object: post } %>
+            <%= render 'posts/post_info', { object: post } %>
+          </p>
+          <%= render 'posts/comment_form', { object: post } %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

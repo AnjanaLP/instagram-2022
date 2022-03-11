@@ -12,7 +12,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     log_in_as(users(:bob))
     get root_path
     assert_response :success
-    assert_template 'pages/home'
+    assert_template 'posts/feed'
     assert_select 'title', full_title
   end
 end

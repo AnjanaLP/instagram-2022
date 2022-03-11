@@ -1,5 +1,5 @@
 <div class="back-button">
-  <%= link_to 'Back', @post.user %>
+  <%= link_to 'Back', request.referrer == root_url ? :back : @post.user %>
 </div>
 
 <div class="show-card">
@@ -28,10 +28,7 @@
             <% end %>
             <hr>
             <p>
-              <span class='user-link'><%= fa_icon("user-circle") %>
-                                      <%= link_to @post.user.username, @post.user %>
-              </span>
-              <span class="text-muted"><%= @post.caption %></span>
+              <%= render 'posts/post_info', { object: @post } %>
             </p>
 
             <% if @post.comments.any? %>
@@ -52,15 +49,8 @@
             <div class="col-7"></div>
             <div class="col-5">
               <div class="comment-form">
-                <p>
-                  <span class="heart-icon"><%= link_to fa_icon("heart"), post_likes_path(@post),
-                        data: { "turbo-method": :post } %></span>
-                  <span class="likes-count"><%= link_to(pluralize(@post.likes.count, 'like'), likes_post_path(@post) ) %></span>
-                </p>
-                <%= form_with(model: @comment, url: post_comments_path(@post), local: true) do |f| %>
-                  <%= f.text_field :content, placeholder: "Write a comment...", required: true%>
-                  <%= f.submit "Post comment", class: "btn-sm btn-primary comment-btn" %>
-                <% end %>
+                <%= render 'posts/likes_info', { object: @post } %>
+                <%= render 'posts/comment_form', { object: @post } %>
               </div>
             </div>
           </div>

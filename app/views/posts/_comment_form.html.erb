@@ -1,0 +1,4 @@
+<%= form_with(model: @comment, url: post_comments_path(object), local: true) do |f| %>
+  <%= f.text_field :content, placeholder: "Write a comment...", required: true%>
+  <%= f.submit "Post comment", class: "btn-sm btn-primary comment-btn" %>
+<% end %>
