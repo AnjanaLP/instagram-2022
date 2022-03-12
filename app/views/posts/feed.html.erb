@@ -4,7 +4,7 @@
       <div class="col">
         <div class="card mb-5 card-body feed">
           <span class='mb-3 user-link'><%= fa_icon("user-circle") %>
-                                  <%= link_to post.user.username, post.user %>
+                                  <%= link_to post.username, post.user %>
           </span>
           <% if post.image.attached? %>
             <%= link_to image_tag(post.image), post %>
