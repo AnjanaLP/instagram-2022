@@ -30,6 +30,10 @@
   width: 21rem;
   margin: 0 auto;
   float: none;
+  input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }
 
 .form-card-sub {
@@ -37,16 +41,9 @@
   margin: 0 auto;
   float: none;
   margin-top: 15px;
-}
-
-
-.form-card input {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.form-card-sub a {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }
 
 .fine-print {
@@ -154,7 +151,6 @@
     font-weight: bold;
   }
 }
-
 
 .gallery-thumbs img {
   width: 100%;
