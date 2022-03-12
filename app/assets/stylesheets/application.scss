@@ -152,8 +152,41 @@
   }
 }
 
-.gallery-thumbs img {
+.feed img {
   width: 100%;
+}
+
+.gallery-thumbs {
+  position: relative;
+  img {
+    width: 100%;
+  }
+}
+
+.thumb-stats {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gallery-thumbs:hover img {
+  opacity: 0.7;
+}
+
+.gallery-thumbs:hover .thumb-stats {
+  opacity: 1;
+}
+
+.thumb-text {
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 }
 
 .stats {

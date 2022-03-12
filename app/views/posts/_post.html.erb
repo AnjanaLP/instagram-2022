@@ -5,5 +5,12 @@
     <% else %>
       <%= link_to image_tag(""), post %>
     <% end %>
+
+    <div class="thumb-stats">
+      <div class="thumb-text">
+        <span><%= fa_icon("heart") %> <%= post.likes.count %></span>
+        <span class=><%= fa_icon("comment") %> <%= post.comments.count %></span>
+      </div>
+    </div>
   </div>
 </div>

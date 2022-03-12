@@ -2,7 +2,7 @@
   <% if @feed_posts.any? %>
     <% @feed_posts.each do |post| %>
       <div class="col">
-        <div class="card mb-5 card-body gallery-thumbs">
+        <div class="card mb-5 card-body feed">
           <span class='mb-3 user-link'><%= fa_icon("user-circle") %>
                                   <%= link_to post.user.username, post.user %>
           </span>
