@@ -1,0 +1,8 @@
+<% unless comment.content.blank? %>
+  <p>
+    <span class='user-link'><%= fa_icon("user-circle") %>
+                            <%= link_to comment.user.username, comment.user %>
+    </span>
+    <span class="text-muted"><%= comment.content %></span>
+  </p>
+<% end %>
