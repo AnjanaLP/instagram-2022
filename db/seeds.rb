@@ -1,6 +1,6 @@
 User.create!(name:     "Test User",
-             email:    "test-user@example.com",
-             username: "test-user",
+             email:    "test@example.com",
+             username: "test-user2022",
              password: "password")
 
 50.times do |n|
