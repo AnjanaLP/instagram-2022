@@ -32,9 +32,10 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                               username: username,
                                               password: "" } }
     assert_not flash.empty?
+    @user.reload
     assert_redirected_to @user
     assert_nil session[:forwarding_url]
-    @user.reload
+
     assert_equal name,  @user.name
     assert_equal email, @user.email
     assert_equal username, @user.username

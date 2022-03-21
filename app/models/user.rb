@@ -1,6 +1,13 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = URI::MailTo::EMAIL_REGEXP
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
+  def should_generate_new_friendly_id?
+    username_changed?
+  end
+
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
