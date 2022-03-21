@@ -3,7 +3,7 @@ User.create!(name:     "Test User",
              username: "test-user2022",
              password: "password")
 
-50.times do |n|
+20.times do |n|
   name  = Faker::Name.name
   username = name.split(" ").first.downcase + rand(1...1000).to_s
   email = "#{username}@example.com"
