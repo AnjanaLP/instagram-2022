@@ -20,5 +20,9 @@
         </div>
       </div>
     <% end %>
+  <% else %>
+    <div class="text-center">
+      <%= link_to "Follow a user to see your feed", users_path, class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
