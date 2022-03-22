@@ -4,7 +4,12 @@ https://anjana-instagram.herokuapp.com
 
 An application to duplicate the core functionality of Instagram using Rails 7, implemented in a test driven manner.
 
-![Screenshot](https://i.imgur.com/awcF8BQ.png?2)
+![Screenshot](https://i.imgur.com/WbR9m7q.png?1)
+
+![Screenshot](https://i.imgur.com/TYgPec0.png?1)
+
+![Screenshot](https://i.imgur.com/O4Z16Tt.png?1)
+
 
 ## Specifications
 - Users can signup. Presence, length and format validations plus email and username uniqueness validations in both model and database
@@ -20,6 +25,13 @@ An application to duplicate the core functionality of Instagram using Rails 7, i
 - The homepage will show a feed of posts from the users you are following if you are logged in. You can also 'like' and add comments here. If you are not following anyone you will see a link to the users index page which shows a list of all the users you can follow, paginated.  If not logged in, you will see the login form, which includes a link to sign up in case you are not registered.
 - Instead of showing user id's in the urls, they instead display the user's username, which will get updated if the user changes their username.
 - Production: deployed on Heroku with images stored on Amazon S3.
+
+## How to use
+
+Visit https://anjana-instagram.herokuapp.com
+(Log in with email test@example.com and password as the password to see sample data already set up)
+
+To use the app locally, please follow the below instructions:
 
 ### Install project dependencies
 Clone the repo to your local machine, change into the directory, then:
