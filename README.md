@@ -1,7 +1,4 @@
 # Instagram
-
-https://anjana-instagram.herokuapp.com
-
 An application to duplicate the core functionality of Instagram using Rails 7, implemented in a test driven manner.
 
 ![Screenshot](https://i.imgur.com/WbR9m7q.png?1)
@@ -10,7 +7,7 @@ An application to duplicate the core functionality of Instagram using Rails 7, i
 
 ![Screenshot](https://i.imgur.com/O4Z16Tt.png?1)
 
-
+![Screenshot](https://i.imgur.com/uyJzH23.png?1)
 ## Specifications
 - Users can signup. Presence, length and format validations plus email and username uniqueness validations in both model and database
 - Users can login with correct email and password
@@ -27,9 +24,8 @@ An application to duplicate the core functionality of Instagram using Rails 7, i
 - Production: deployed on Heroku with images stored on Amazon S3.
 
 ## How to use
-
-Visit https://anjana-instagram.herokuapp.com
-(Log in with email test@example.com and password as the password to see sample data already set up)
+Visit https://anjana-instagram.herokuapp.com<br>
+(Log in email: test@example.com, password: password to see sample data already set up)
 
 To use the app locally, please follow the below instructions:
 
