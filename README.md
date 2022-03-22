@@ -7,7 +7,8 @@ An application to duplicate the core functionality of Instagram using Rails 7, i
 
 ![Screenshot](https://i.imgur.com/O4Z16Tt.png?1)
 
-![Screenshot](https://i.imgur.com/uyJzH23.png?1)
+![Screenshot](https://i.imgur.com/ra5CtFD.png?1)
+
 ## Specifications
 - Users can signup. Presence, length and format validations plus email and username uniqueness validations in both model and database
 - Users can login with correct email and password
