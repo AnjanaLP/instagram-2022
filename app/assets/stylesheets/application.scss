@@ -239,10 +239,26 @@
 
 .comment-form {
   margin-top: -40px;
+  margin-left: -20px;
 }
 
 .heart-icon {
   a {
     color: black;
+  }
+}
+
+@media (max-width: 800px) {
+  .page-container {
+    padding-top: 75px;
+  }
+  .container {
+    width: 75%;
+  }
+  .show-card {
+    width: 80rem;
+  }
+  .alert {
+    margin-top: 85px;
   }
 }
