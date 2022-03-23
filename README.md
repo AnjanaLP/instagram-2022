@@ -29,7 +29,8 @@ An application to duplicate the core functionality of Instagram using Rails 7, i
 - Production: deployed on Heroku with images stored on Amazon S3.
 
 ## How to use
-https://anjana-instagram.herokuapp.com Use the following login details to see sample data already setup: email: test@example.com, password: password
+Visit https://anjana-instagram.herokuapp.com<br>
+(Log in email: test@example.com, password: password to see sample data already set up)
 
 To use the app locally, please follow the below instructions:
 
