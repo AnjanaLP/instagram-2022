@@ -1,5 +1,5 @@
 # Instagram
-An application to duplicate the core functionality of Instagram using Rails 7, implemented in a test driven manner.
+An application to duplicate the core functionality and design of Instagram using Ruby on Rails 7, implemented in a test driven manner.
 
 ### User profile page
 ![Screenshot](https://i.imgur.com/WbR9m7q.png?1)
