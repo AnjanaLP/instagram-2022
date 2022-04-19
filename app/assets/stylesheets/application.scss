@@ -1,23 +1,8 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import "bootstrap";
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-
+/* GLOBAL STYLES */
 .container {
   width: 67%;
 }
@@ -26,24 +11,8 @@
   margin-top: 75px;
 }
 
-.form-card {
-  width: 21rem;
-  margin: 0 auto;
-  float: none;
-  input {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-}
-
-.form-card-sub {
-  width: 21rem;
-  margin: 0 auto;
-  float: none;
-  margin-top: 15px;
-  a {
-    text-decoration: none;
-  }
+.logo {
+  font-family: 'Pacifico', cursive;
 }
 
 .fine-print {
@@ -56,36 +25,197 @@
 }
 
 .alert {
-  margin-top: 70px
+  margin-top: 70px;
+}
+
+.show-card {
+  margin-top: -50px;
 }
 
 .users-card {
-  width: 32rem;
-  margin: 0 auto;
   float: none;
+  margin: 0 auto;
+  width: 32rem;
+}
+
+.user {
+  margin-top: -60px;
+  padding-left: 100px;
+}
+
+.caption {
+  margin-left: 10px;
+}
+
+.comments {
+  list-style: none;
+}
+
+.show-image {
+  margin-left: 80px;
+}
+
+.feed img {
+  width: 100%;
+}
+
+.picture img {
+  margin-bottom: -33px;
+}
+
+/* LINKS */
+.relationship-title a {
+  color: black;
+  text-decoration: none;
+}
+
+.heart-icon a {
+  color: #000;
+}
+
+.stats a {
+  color: #000;
+  margin-left: 30px;
+  text-decoration: none;
+}
+
+.user-link a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.post-links {
+  display: block;
+  text-align: right;
+  a {
+    text-decoration: none;
+  }
+}
+
+.likes-count {
+  margin-left: 10px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .users {
   list-style: none;
   a {
-    text-decoration: none;
     color: black;
+    text-decoration: none;
   }
   a:hover{
     text-decoration: underline;
   }
 }
 
-.user {
-  padding-left: 100px;
-  margin-top: -60px;
+/* GALLERY THUMBNAILS */
+.gallery-thumbs {
+  position: relative;
+  img {
+    width: 100%;
+  }
 }
 
+.gallery-thumbs:hover img {
+  opacity: 0.7;
+}
+
+.gallery-thumbs:hover .thumb-stats {
+  opacity: 1;
+}
+
+.thumb-stats {
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  transition: .5s ease;
+  -ms-transform: translate(-50%, -50%);
+}
+
+.thumb-text {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px 32px;
+}
+
+/* BUTTONS */
 .follow-button {
   margin-left: 341px;
   margin-top: -60px;
 }
 
+.back-button {
+  a {
+    color: grey;
+  }
+  margin-left: 70px;
+}
+
+.delete-btn {
+  color: red;
+  margin-right: 10px;
+}
+
+.comment-btn {
+  margin-left: 10px;
+}
+
+.relationship-btn {
+  form {
+    display: inline;
+  }
+}
+
+/* FORMS */
+.form-card {
+  input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  float: none;
+  margin: 0 auto;
+  width: 21rem;
+}
+
+.form-card-sub {
+  a {
+    text-decoration: none;
+  }
+  float: none;
+  margin: 15px auto 0;
+  width: 21rem;
+}
+
+.comment-form {
+  margin-left: -20px;
+  margin-top: -40px;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .page-container {
+    padding-top: 75px;
+  }
+  .container {
+    width: 75%;
+  }
+  .show-card {
+    width: 80rem;
+  }
+  .alert {
+    margin-top: 85px;
+  }
+}
+
+/* PAGINATION */
 .apple_pagination {
   border: 1px solid #e5e5e5;
   text-align: center;
@@ -112,153 +242,3 @@
   color: black; }
 .apple_pagination a:hover, .apple_pagination a:focus {
   text-decoration: underline; }
-
-.logo {
-  font-family: 'Pacifico', cursive;
-}
-
-.show-image {
-  margin-left: 80px;
-}
-
-.caption {
-  margin-left: 10px;
-}
-
-.back-button {
-  margin-left: 70px;
-  a {
-    color: grey;
-  }
-}
-
-.show-card {
-  margin-top: -50px;
-}
-
-.post-links {
-  display: block;
-  text-align: right;
-  a {
-    text-decoration: none;
-  }
-}
-
-.user-link {
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-  }
-}
-
-.feed img {
-  width: 100%;
-}
-
-.gallery-thumbs {
-  position: relative;
-  img {
-    width: 100%;
-  }
-}
-
-.thumb-stats {
-  transition: .5s ease;
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.gallery-thumbs:hover img {
-  opacity: 0.7;
-}
-
-.gallery-thumbs:hover .thumb-stats {
-  opacity: 1;
-}
-
-.thumb-text {
-  font-weight: bold;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
-}
-
-.stats {
-  a {
-    text-decoration: none;
-    color: black;
-    margin-left: 30px;
-  }
-}
-
-.relationship-btn {
-  form {
-    display: inline;
-  }
-}
-
-.relationship-title {
-  a {
-    text-decoration: none;
-    color: black;
-  }
-}
-
-.comments {
-  list-style: none;
-}
-
-.picture {
-  img {
-    margin-bottom: -33px;
-  }
-}
-
-.delete-btn {
-  margin-right: 10px;
-  color: red;
-}
-
-.comment-btn {
-  margin-left: 10px;
-}
-
-.likes-count {
-  margin-left: 10px;
-  a {
-    text-decoration: none;
-    color: black;
-  }
-}
-
-.comment-form {
-  margin-top: -40px;
-  margin-left: -20px;
-}
-
-.heart-icon {
-  a {
-    color: black;
-  }
-}
-
-@media (max-width: 800px) {
-  .page-container {
-    padding-top: 75px;
-  }
-  .container {
-    width: 75%;
-  }
-  .show-card {
-    width: 80rem;
-  }
-  .alert {
-    margin-top: 85px;
-  }
-}
